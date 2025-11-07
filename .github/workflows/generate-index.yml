@@ -4,10 +4,10 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'htmllive/**' # Dipicu jika ada perubahan di folder htmllive atau subfoldernya
+      - 'htmllive/**'
 
 jobs:
-  # Job 1: Daftar Isi di Folder UTAMA htmllive/ (Akan berisi link ke 4 sub-folder)
+  # Job 1: Daftar Isi di Folder UTAMA htmllive/
   list_main_folder:
     runs-on: ubuntu-latest
     permissions:
@@ -21,7 +21,7 @@ jobs:
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
           FOLDER: htmllive
-          OUTPUT_DIR: htmllive # Membuat htmllive/index.html (Daftar Folder)
+          OUTPUT_DIR: htmllive
 
       - name: Commit and Push Main Index Change
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -30,12 +30,9 @@ jobs:
           branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
   
-  ---
-  
-  # Job 2: Daftar Isi di Folder HTML/ (Daftar file HTML)
+  # Job 2: Daftar Isi di Folder HTML/
   list_html_folder:
     runs-on: ubuntu-latest
-    needs: [list_main_folder]
     permissions:
       contents: write
 
@@ -56,10 +53,9 @@ jobs:
           branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  # Job 3: Daftar Isi di Folder Image/ (Daftar file gambar)
+  # Job 3: Daftar Isi di Folder Image/
   list_image_folder:
     runs-on: ubuntu-latest
-    needs: [list_main_folder]
     permissions:
       contents: write
 
@@ -80,10 +76,9 @@ jobs:
           branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
           
-  # Job 4: Daftar Isi di Folder Music/ (Daftar file MP3)
+  # Job 4: Daftar Isi di Folder Music/
   list_music_folder:
     runs-on: ubuntu-latest
-    needs: [list_main_folder]
     permissions:
       contents: write
 
@@ -104,10 +99,9 @@ jobs:
           branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  # Job 5: Daftar Isi di Folder Video/ (Daftar file video)
+  # Job 5: Daftar Isi di Folder Video/
   list_video_folder:
     runs-on: ubuntu-latest
-    needs: [list_main_folder]
     permissions:
       contents: write
 
