@@ -3,126 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticker Gaming (Ramping & Non-Stop)</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Ticker Infinite Loop</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
-    
+
     <style>
-        /* ============================== */
-        /* 1. STYLING DASAR & PROPORSI    */
-        /* ============================== */
         html, body {
-            height: 100%;
-            width: 100%;
             margin: 0;
             padding: 0;
-            background-color: transparent; 
+            overflow: hidden;
+            background: transparent;
             font-family: 'Inter', sans-serif;
-            overflow: hidden; 
         }
 
-        /* Kotak Memanjang (Container Visual) */
         .ticker-wrap {
             position: fixed;
-            top: 50%; 
-            transform: translateY(-50%); 
-            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
             width: 100%;
-            height: 30px; /* TINGGI DIRAMPINGKAN KE 40px */
-            background-color: #0d0d0d;
-            border-top: 5px solid #ff0055; 
-            border-bottom: 5px solid #ff0055; 
-            overflow: hidden; 
-            box-sizing: border-box;
+            height: 30px;
+            background: #0d0d0d;
+            border-top: 5px solid #ff0055;
+            border-bottom: 5px solid #ff0055;
             display: flex;
             align-items: center;
+            overflow: hidden;
         }
 
-        /* Container Teks Bergerak */
-        .ticker-content {
-            min-width: 200%; 
-            animation: marquee 15s linear infinite; 
-            white-space: nowrap;
-            animation-play-state: running; /* Selalu berjalan */
+        .ticker-move {
             display: flex;
+            white-space: nowrap;
+            animation: scroll 30s linear infinite;
         }
 
-        /* PERHATIAN: Fitur pause on hover telah dihapus untuk menghindari freeze */
-
-        /* Teks di dalamnya */
         .ticker-item {
-            padding: 0 25px; 
-            margin-right: 50px; 
-            color: #ffffff;
-            font-size: 1.0rem; 
+            padding: 0 40px;
+            color: #fff;
+            font-size: 1rem;
             font-weight: 900;
             text-transform: uppercase;
-            line-height: 20px; /* LINE-HEIGHT DISESUAIKAN UNTUK KOTAK 40px */
-            /* Efek Neon Merah */
-            text-shadow: 0 0 7px #ff0055, 0 0 10px #ff0055; 
-            flex-shrink: 0;
+            text-shadow: 0 0 7px #ff0055, 0 0 10px #ff0055;
         }
 
-        .up, .down { 
-            color: #ff0055; 
-            font-weight: 900; 
-        }
-
-        /* ============================== */
-        /* 2. ANIMASI                     */
-        /* ============================== */
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%); /* Looping 2 set */
-            }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
         }
     </style>
 </head>
 <body>
+
     <div class="ticker-wrap">
-        <div class="ticker-content">
-            <span class="ticker-item">
-                ⚡ LIVE STREAMING BERSAMA RUDI D. JOMPANK! SAPA HOST ANDA! 🟢
-            </span>
-            <span class="ticker-item">
-                💥 JANGAN LUPA FOLLOW AKUN INI DAN TEKAN TOMBOL LOVE! 💚
-            </span>
-            <span class="ticker-item">
-                🚀 DUKUNGAN ANDA SANGAT BERARTI! SILAKAN SHARE SIARAN INI! 🔗
-            </span>
-            <span class="ticker-item">
-                🌐 KUNJUNGI LINK DI BIO KAMI UNTUK AKSES FILE KHUSUS! 📁
-            </span>
-            <span class="ticker-item">
-                ✨ MARI BERINTERAKSI DENGAN POSITIF, JAGA ETIKA! 🙏
-            </span>
-            <span class="ticker-item">
-                🔥 TERIMA KASIH TELAH BERGABUNG! NIKMATI SIARAN INI. ☕
-            </span>
-            
-            <span class="ticker-item">
-                ⚡ LIVE STREAMING BERSAMA RUDI D. JOMPANK! SAPA HOST ANDA! 🟢
-            </span>
-            <span class="ticker-item">
-                💥 JANGAN LUPA FOLLOW AKUN INI DAN TEKAN TOMBOL LOVE! 💚
-            </span>
-            <span class="ticker-item">
-                🚀 DUKUNGAN ANDA SANGAT BERARTI! SILAKAN SHARE SIARAN INI! 🔗
-            </span>
-            <span class="ticker-item">
-                🌐 KUNJUNGI LINK DI BIO KAMI UNTUK AKSES FILE KHUSUS! 📁
-            </span>
-            <span class="ticker-item">
-                ✨ MARI BERINTERAKSI DENGAN POSITIF, JAGA ETIKA! 🙏
-            </span>
-            <span class="ticker-item">
-                🔥 TERIMA KASIH TELAH BERGABUNG! NIKMATI SIARAN INI. ☕
-            </span>
+        <div id="ticker" class="ticker-move">
+            <!-- SET ASLI (JANGAN DIHAPUS) -->
+            <span class="ticker-item">⚡ LIVE STREAMING BERSAMA RUDI D. JOMPANK! SAPA HOST ANDA! 🟢</span>
+            <span class="ticker-item">💥 JANGAN LUPA FOLLOW AKUN INI DAN TEKAN TOMBOL LOVE! 💚</span>
+            <span class="ticker-item">🚀 DUKUNGAN ANDA SANGAT BERARTI! SILAKAN SHARE SIARAN INI! 🔗</span>
+            <span class="ticker-item">🌐 KUNJUNGI LINK DI BIO UNTUK AKSES FILE KHUSUS! 📁</span>
+            <span class="ticker-item">✨ JAGA ETIKA DAN INTERAKSI DENGAN POSITIF! 🙏</span>
+            <span class="ticker-item">🔥 TERIMA KASIH TELAH BERGABUNG! NIKMATI SIARAN INI ☕</span>
         </div>
     </div>
+
+    <script>
+        // DUPLIKASI OTOMATIS AGAR LOOPING ABADI
+        const ticker = document.getElementById("ticker");
+        ticker.innerHTML += ticker.innerHTML;
+    </script>
+
 </body>
 </html>
