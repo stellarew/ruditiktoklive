@@ -1,40 +1,38 @@
-# 🔗 Tautan Penting Rudi TikTok Live
+# 🌟 Pusat Tautan Resmi Rudi TikTok Live
 
-Selamat datang di repositori yang menampung semua **tautan penting** yang dibutuhkan oleh komunitas **Rudi TikTok Live**.
+Selamat datang di repositori pusat tautan resmi **Rudi TikTok Live**.
 
-Halaman ini berfungsi sebagai pusat navigasi tunggal untuk memudahkan pengikut mengakses profil utama, tautan download, atau informasi penting lainnya yang dibagikan selama sesi Live Streaming.
+Halaman ini berfungsi sebagai referensi tunggal untuk mengakses semua platform media sosial Rudi. Mari kita terhubung dan jangan lewatkan Live Streaming berikutnya!
 
-## 🌐 Akses Langsung Halaman Link
+## 🔗 Kunjungi Halaman Tautan (Link Hub)
 
-Anda dapat mengakses daftar tautan lengkap (halaman GitHub Pages) di sini:
+Akses semua tautan dalam satu tempat (di-host menggunakan GitHub Pages):
 
-> [GANTI DENGAN URL GITHUB PAGES ANDA DI SINI] 
-> Contoh: `https://ruditiktoklive.github.io/link-hub/`
-
-## 🛠️ Tentang Proyek Ini
-
-Repositori ini adalah implementasi sederhana dari **GitHub Pages** yang digunakan untuk menyajikan situs web statis yang berisi daftar tautan.
-
-* **Tujuan:** Menyediakan URL yang stabil dan mudah diingat untuk semua link penting Rudi TikTok Live.
-* **Teknologi:** HTML, CSS sederhana, dan GitHub Pages.
-* **File Utama:** `index.html` (berisi daftar tautan yang ditampilkan).
-
-## ✍️ Cara Mengelola Tautan
-
-Untuk memperbarui atau menambahkan tautan baru:
-
-1.  **Edit File:** Buka file **`index.html`** di repositori ini.
-2.  **Cari Bagian Link:** Cari baris kode yang ditandai dengan komentar seperti ``.
-3.  **Perbarui:** Ubah atau tambahkan tautan baru menggunakan format HTML `<a href="...">...</a>`.
-4.  **Commit:** Simpan perubahan Anda (`Commit changes`). GitHub Pages akan otomatis memperbarui situs web dalam beberapa menit.
+> **[Akses Link Hub Rudi TikTok Live di Sini](https://stellarew.github.io/ruditiktoklive/)**
 
 ---
 
-## 🙋‍♂️ Kontak dan Dukungan
+## 🚀 Mari Berinteraksi & Dukung Rudi!
 
-Jika Anda memiliki pertanyaan tentang konten Live atau tautan yang ada, silakan kunjungi:
+Agar Anda selalu mendapatkan notifikasi Live terbaru dan konten video, silakan **Follow** atau **Subscribe** melalui tautan di bawah ini:
 
-* **TikTok:** [Link Profil TikTok Rudi]
-* **Media Sosial Lain:** [Link Instagram/Discord/lainnya]
+### 📱 TikTok - FOLLOW SEKARANG!
 
-Terima kasih atas dukungannya!
+Klik tautan di bawah untuk langsung menuju profil dan tekan tombol **Ikuti/Follow**.
+
+* **TikTok:** [https://www.tiktok.com/@rudidjompank](https://www.tiktok.com/@rudidjompank)
+
+### 📺 YouTube - SUBSCRIBE OTOMATIS!
+
+Klik tautan di bawah, dan Anda akan langsung diminta untuk **Subscribe** ke Channel!
+
+* **YouTube:** [https://www.youtube.com/@RudiDJompank?sub_confirmation=1](https://www.youtube.com/@RudiDJompank?sub_confirmation=1)
+
+---
+
+## 🛠️ Tentang Repositori Ini
+
+Repositori ini hanya berisi file statis (`index.html`) yang berfungsi sebagai *landing page* tautan (Link Hub) untuk memudahkan akses komunitas.
+
+* **URL Halaman:** `https://stellarew.github.io/ruditiktoklive/`
+* **Pengelolaan:** Dikelola menggunakan GitHub Pages.
