@@ -8,6 +8,11 @@ on:
 
 jobs:
   generate_listing:
+
+	# >>> TAMBAHKAN BLOK INI <<<
+    permissions:
+      contents: write # Ini memberikan izin bagi Action untuk menulis (commit & push)
+    # >>> AKHIR BLOK TAMBAHAN <<<
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
