@@ -1,0 +1,29 @@
+name: Generate Directory Listing
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'htmllive/**' # Hanya jalankan jika ada perubahan di folder htmllive
+
+jobs:
+  generate_listing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Langkah ini akan otomatis membuat index.html di folder htmllive
+      - name: Generate Directory Listings for htmllive
+        uses: jayanta525/github-pages-directory-listing@v4.0.0
+        with:
+          # Ganti dengan nama folder Anda
+          FOLDER: htmllive
+          # Output akan disimpan di repositori dan di-deploy Pages
+          OUTPUT_DIR: htmllive 
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto: Generate directory listing for htmllive"
+          branch: main # Ganti jika branch utama Anda bukan 'main'
