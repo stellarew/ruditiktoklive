@@ -1,39 +1,129 @@
-name: Auto Generate Directory Listing
+name: Auto Generate Directory Listing (Multi-Folder)
 
 on:
   push:
     branches: [ main ]
     paths:
-      - 'htmllive/**'
+      - 'htmllive/**' # Dipicu jika ada perubahan di folder htmllive atau subfoldernya
 
 jobs:
-  generate_listing:
-    # Blok 'permissions' harus berada di bawah 'generate_listing:'
+  # Job 1: Daftar Isi di Folder UTAMA htmllive/ (Akan berisi link ke 4 sub-folder)
+  list_main_folder:
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Generate Index for htmllive/
+        uses: jayanta525/github-pages-directory-listing@v4.0.0
+        with:
+          FOLDER: htmllive
+          OUTPUT_DIR: htmllive # Membuat htmllive/index.html (Daftar Folder)
+
+      - name: Commit and Push Main Index Change
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto: Update main index listing in htmllive/"
+          branch: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+  
+  ---
+  
+  # Job 2: Daftar Isi di Folder HTML/ (Daftar file HTML)
+  list_html_folder:
     runs-on: ubuntu-latest
+    needs: [list_main_folder]
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Langkah untuk mengatur identitas Git (disarankan untuk auto-commit)
-      - name: Configure Git User
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      # Langkah ini akan otomatis membuat index.html di folder htmllive
-      - name: Generate Directory Listings for htmllive
+      - name: Generate Index for htmllive/HTML/
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
-          FOLDER: htmllive
-          OUTPUT_DIR: htmllive
-          
-      # Langkah ini akan melakukan commit file index.html yang baru dibuat
-      - name: Commit and Push Changes
+          FOLDER: htmllive/HTML
+          OUTPUT_DIR: htmllive/HTML
+
+      - name: Commit and Push HTML Index Change
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto: Update directory listing in htmllive/"
+          commit_message: "Auto: Update HTML folder index"
+          branch: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  # Job 3: Daftar Isi di Folder Image/ (Daftar file gambar)
+  list_image_folder:
+    runs-on: ubuntu-latest
+    needs: [list_main_folder]
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Index for htmllive/Image/
+        uses: jayanta525/github-pages-directory-listing@v4.0.0
+        with:
+          FOLDER: htmllive/Image
+          OUTPUT_DIR: htmllive/Image
+
+      - name: Commit and Push Image Index Change
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto: Update Image folder index"
+          branch: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+  # Job 4: Daftar Isi di Folder Music/ (Daftar file MP3)
+  list_music_folder:
+    runs-on: ubuntu-latest
+    needs: [list_main_folder]
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Index for htmllive/Music/
+        uses: jayanta525/github-pages-directory-listing@v4.0.0
+        with:
+          FOLDER: htmllive/Music
+          OUTPUT_DIR: htmllive/Music
+
+      - name: Commit and Push Music Index Change
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto: Update Music folder index"
+          branch: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  # Job 5: Daftar Isi di Folder Video/ (Daftar file video)
+  list_video_folder:
+    runs-on: ubuntu-latest
+    needs: [list_main_folder]
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Index for htmllive/Video/
+        uses: jayanta525/github-pages-directory-listing@v4.0.0
+        with:
+          FOLDER: htmllive/Video
+          OUTPUT_DIR: htmllive/Video
+
+      - name: Commit and Push Video Index Change
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto: Update Video folder index"
           branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
