@@ -1,34 +1,39 @@
-name: Generate Directory Listing
+name: Auto Generate Directory Listing
 
 on:
   push:
     branches: [ main ]
     paths:
-      - 'htmllive/**' # Hanya jalankan jika ada perubahan di folder htmllive
+      - 'htmllive/**'
 
 jobs:
   generate_listing:
-
-	# >>> TAMBAHKAN BLOK INI <<<
+    # Blok 'permissions' harus berada di bawah 'generate_listing:'
     permissions:
-      contents: write # Ini memberikan izin bagi Action untuk menulis (commit & push)
-    # >>> AKHIR BLOK TAMBAHAN <<<
+      contents: write
+      
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Langkah untuk mengatur identitas Git (disarankan untuk auto-commit)
+      - name: Configure Git User
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       # Langkah ini akan otomatis membuat index.html di folder htmllive
       - name: Generate Directory Listings for htmllive
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
-          # Ganti dengan nama folder Anda
           FOLDER: htmllive
-          # Output akan disimpan di repositori dan di-deploy Pages
-          OUTPUT_DIR: htmllive 
-
+          OUTPUT_DIR: htmllive
+          
+      # Langkah ini akan melakukan commit file index.html yang baru dibuat
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto: Generate directory listing for htmllive"
-          branch: main # Ganti jika branch utama Anda bukan 'main'
+          commit_message: "Auto: Update directory listing in htmllive/"
+          branch: main
+          token: ${{ secrets.GITHUB_TOKEN }}
