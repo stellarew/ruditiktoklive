@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Live Bergerak</title>
+    <!-- Impor font 'Inter' dari Google Fonts untuk tampilan yang bersih -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Pengaturan dasar untuk body */
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            /* Latar belakang transparan, ini kuncinya untuk OBS/TikTok */
+            background-color: transparent; 
+            font-family: 'Inter', sans-serif;
+            /* Sembunyikan scrollbar di halaman utama */
+            overflow: hidden; 
+        }
+
+        /* Ini adalah "Kotak Memanjang" yang diminta */
+        .scroll-container {
+            position: fixed;
+            bottom: 20px; /* Jarak 20px dari bawah layar */
+            left: 50%;
+            transform: translateX(-50%); /* Trik untuk memposisikan di tengah */
+            
+            width: 90%; /* Lebar kotak 90% dari layar */
+            max-width: 600px; /* Tapi lebar maksimalnya 600px */
+            height: 250px; /* Tinggi kotak. Teks akan di-scroll di dalam ini */
+            
+            /* Styling kotak */
+            background-color: rgba(10, 10, 20, 0.85); /* Latar belakang gelap semi-transparan */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Garis tepi tipis */
+            border-radius: 12px; /* Sudut membulat */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* Bayangan untuk efek 'pop-up' */
+            
+            /* Ini yang paling penting: sembunyikan teks yang 'meluap' */
+            overflow: hidden; 
+            
+            /* Padding di dalam kotak (kiri dan kanan) */
+            padding: 0 1.5rem; 
+            box-sizing: border-box;
+        }
+
+        /* Ini adalah konten teks yang akan bergerak */
+        .scroll-content {
+            color: #ffffff; /* Warna teks putih */
+            font-size: 1.1rem; /* Ukuran font (sesuaikan jika perlu) */
+            line-height: 1.6; /* Jarak antar baris */
+            
+            /* Menerapkan animasi scroll */
+            /* Durasi 100 detik. Ubah '100s' jika ingin lebih cepat/lambat */
+            animation: scroll-up 100s linear infinite;
+            
+            /* Jaga agar animasi tetap berjalan */
+            animation-play-state: running;
+        }
+
+        /* Opsional: Jeda animasi saat mouse berada di atasnya */
+        .scroll-content:hover {
+            animation-play-state: paused;
+        }
+
+        /* Styling untuk setiap paragraf di dalam teks */
+        .scroll-content p {
+            margin-bottom: 1.5em; /* Jarak antar paragraf */
+            text-align: justify; /* Ratakan teks kiri-kanan */
+        }
+
+        /* Definisi animasi 'scroll-up' */
+        @keyframes scroll-up {
+            from {
+                /* Mulai dari posisi 'di bawah' kotak (250px = tinggi container) */
+                transform: translateY(250px);
+            }
+            to {
+                /* Selesai saat teks sepenuhnya terdorong ke 'atas' */
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Kotak container untuk teks berjalan -->
+    <div class="scroll-container">
+        <!-- Konten teks yang akan berjalan -->
+        <div class="scroll-content">
+            <!-- Teks Anda dibagi menjadi paragraf untuk keterbacaan -->
+            <p>“Selamat datang di siaran live Rudi D. Jompank. Informasi terkini dari studio kami menyebutkan bahwa suasana hari ini penuh energi positif, dan seluruh penonton diharapkan dapat menikmati jalannya siaran dengan nyaman. Aktivitas live malam ini menampilkan berbagai obrolan santai, komentar ringan, hingga diskusi ringan seputar teknologi, kehidupan sehari-hari, serta hiburan umum. Tim produksi mengingatkan bahwa seluruh pemirsa dipersilakan berinteraksi melalui kolom komentar dengan tetap menjaga etika, sopan santun, serta saling menghormati pendapat satu sama lain. Dalam beberapa menit ke depan, live akan menampilkan berbagai segmen ringan yang bertujuan menghibur, memberikan perspektif baru, serta menemani aktivitas harian Anda. Situasi live berjalan kondusif, dan seluruh pemirsa yang baru bergabung dipersilakan untuk tetap mengikuti siaran tanpa tekanan atau kewajiban apa pun. Partisipasi penonton dalam bentuk komentar atau pertanyaan akan membantu menciptakan suasana yang hangat dan interaktif, sehingga siaran dapat berlangsung lebih hidup.</p>
+
+            <p>Hari ini, laporan ringan juga datang dari ruang komunitas, di mana beberapa pemirsa membagikan pengalaman menarik mereka selama mengikuti live sebelumnya. Cerita-cerita tersebut menambah warna bagi jalannya siaran, sekaligus memberikan gambaran bahwa ruang live ini terbuka bagi siapa pun yang ingin bersantai sejenak dari rutinitas. Tim penyiar terus mengimbau agar seluruh informasi yang dibagikan tetap bersifat positif, tidak menyinggung pihak mana pun, dan mengikuti pedoman yang berlaku di platform. Dengan demikian, siaran dapat terus berjalan dengan aman dan nyaman bagi seluruh penonton.</p>
+            
+            <p>Siaran ini dipersembahkan oleh Rudi D. Jompank sebagai ruang santai publik, tempat berbagi obrolan, inspirasi ringan, dan hiburan yang ramah untuk semua umur. Tetap bersama kami, dan semoga live ini membawa kenyamanan serta semangat baru untuk Anda.”</p>
+
+            <!-- Teks diduplikasi di bawah ini agar scroll terlihat 'mulus' dan tak terputus -->
+            <p>“Selamat datang di siaran live Rudi D. Jompank. Informasi terkini dari studio kami menyebutkan bahwa suasana hari ini penuh energi positif, dan seluruh penonton diharapkan dapat menikmati jalannya siaran dengan nyaman. Aktivitas live malam ini menampilkan berbagai obrolan santai, komentar ringan, hingga diskusi ringan seputar teknologi, kehidupan sehari-hari, serta hiburan umum. Tim produksi mengingatkan bahwa seluruh pemirsa dipersilakan berinteraksi melalui kolom komentar dengan tetap menjaga etika, sopan santun, serta saling menghormati pendapat satu sama lain. Dalam beberapa menit ke depan, live akan menampilkan berbagai segmen ringan yang bertujuan menghibur, memberikan perspektif baru, serta menemani aktivitas harian Anda. Situasi live berjalan kondusif, dan seluruh pemirsa yang baru bergabung dipersilakan untuk tetap mengikuti siaran tanpa tekanan atau kewajiban apa pun. Partisipasi penonton dalam bentuk komentar atau pertanyaan akan membantu menciptakan suasana yang hangat dan interaktif, sehingga siaran dapat berlangsung lebih hidup.</p>
+
+            <p>Hari ini, laporan ringan juga datang dari ruang komunitas, di mana beberapa pemirsa membagikan pengalaman menarik mereka selama mengikuti live sebelumnya. Cerita-cerita tersebut menambah warna bagi jalannya siaran, sekaligus memberikan gambaran bahwa ruang live ini terbuka bagi siapa pun yang ingin bersantai sejenak dari rutinitas. Tim penyiar terus mengimbau agar seluruh informasi yang dibagikan tetap bersifat positif, tidak menyinggung pihak mana pun, dan mengikuti pedoman yang berlaku di platform. Dengan demikian, siaran dapat terus berjalan dengan aman dan nyaman bagi seluruh penonton.</p>
+            
+            <p>Siaran ini dipersembahkan oleh Rudi D. Jompank sebagai ruang santai publik, tempat berbagi obrolan, inspirasi ringan, dan hiburan yang ramah untuk semua umur. Tetap bersama kami, dan semoga live ini membawa kenyamanan serta semangat baru untuk Anda.”</p>
+        </div>
+    </div>
+</body>
+</html>
