@@ -117,6 +117,15 @@
         .youtube-link:hover {
             background-color: #cc0000;
         }
+        /* Gaya Khusus untuk Link Folder Live */
+        .htmllive-link {
+            background-color: #3f51b5 !important; /* Biru Tua Khusus */
+            color: white !important;
+            border: none !important;
+        }
+        .htmllive-link:hover {
+            background-color: #303f9f !important;
+        }
 
         /* ==================================== */
         /* 5. FOOTER & KREDIT                   */
@@ -182,20 +191,15 @@
             🔴 SUBSCRIBE Channel YouTube
         </a>
 
-        <a href="https://stellarew.github.io/ruditiktoklive/" target="_blank" class="link-item">
-            Halaman Link Ini (stellarew.github.io)
-        </a>
-        
-	
-	<a href="htmllive/index.html" target="_blank" class="link-item">
+        <a href="htmllive/" class="link-item htmllive-link"> 
             📁 Akses Konten File Khusus Live
         </a>
 
-        <a href="htmllive/" target="_blank" class="link-item">
-            📁 Akses Konten File Khusus Live
+        <a href="https://stellarew.github.io/ruditiktoklive/" target="_blank" class="link-item">
+            Halaman Link Ini (stellarew.github.io)
         </a>
-	
-        </div>
+
+    </div>
 
     <div class="footer">
         Di-host dengan bangga menggunakan <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
@@ -210,10 +214,10 @@
         
         if (savedTheme === 'light') {
             body.classList.add('light-mode');
-            toggleButton.innerHTML = '☀️'; // Ikon Matahari untuk Mode Terang
+            toggleButton.innerHTML = '☀️'; 
         } else {
-            // Default: Dark Mode (sudah diset di CSS :root)
-            toggleButton.innerHTML = '🌙'; // Ikon Bulan untuk Mode Gelap
+            // Default: Dark Mode 
+            toggleButton.innerHTML = '🌙'; 
         }
 
         toggleButton.addEventListener('click', () => {
@@ -224,6 +228,7 @@
                 localStorage.setItem('theme', 'light');
                 toggleButton.innerHTML = '☀️';
             } else {
+                localStorage.setItem('theme', 'dark');
                 localStorage.setItem('theme', 'dark');
                 toggleButton.innerHTML = '🌙';
             }
