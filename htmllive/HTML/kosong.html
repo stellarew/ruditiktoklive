@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Market Ticker - Rudi TikTok Live</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* (CSS SAMA SEPERTI SEBELUMNYA - DIJALANKAN TERUS-MENERUS SELAMA 150 DETIK) */
+        /* Anda tidak perlu mengubah CSS lagi */
+        html, body {
+            height: 100%; width: 100%; margin: 0; padding: 0;
+            background-color: transparent; font-family: 'Inter', sans-serif; overflow: hidden; 
+        }
+
+        .ticker-wrap {
+            position: fixed; top: 50%; transform: translateY(-50%); left: 0;
+            width: 100%; height: 60px;
+            background-color: #000000;
+            /* Ubah warna border menjadi BIRU MUDA agar terlihat seperti Finansial */
+            border-top: 5px solid #3498db; 
+            border-bottom: 5px solid #3498db; 
+            overflow: hidden; box-sizing: border-box; display: flex; align-items: center;
+        }
+
+        .ticker-content {
+            min-width: 400%; animation: marquee 150s linear infinite; 
+            white-space: nowrap; animation-play-state: running; display: flex;
+        }
+
+        .ticker-item {
+            padding: 0 40px; 
+            color: #ecf0f1;
+            font-size: 1.6rem; font-weight: 900;
+            text-transform: uppercase;
+            line-height: 50px; 
+            /* Ubah warna shadow menjadi Biru */
+            text-shadow: 0 0 5px rgba(52, 152, 219, 0.7); 
+            flex-shrink: 0;
+        }
+
+        /* Kelas khusus untuk warna GREEN (Naik) */
+        .up {
+            color: #2ecc71; /* Hijau */
+            font-weight: 900;
+        }
+
+        /* Kelas khusus untuk warna RED (Turun) */
+        .down {
+            color: #e74c3c; /* Merah */
+            font-weight: 900;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticker-wrap">
+        <div class="ticker-content">
+            
+            <span class="ticker-item">
+                📊 <span class="up">EMAS SPOT: $2.350/OZ</span> <span class="up">+1.25%</span> •••• <span class="down">MINYAK MENTAH BRENT: $85.45/BBL</span> <span class="down">-0.88%</span> •••• 🪙 <span class="up">BITCOIN (BTC/USD): $68.700</span> <span class="up">+3.15%</span>
+            </span>
+            <span class="ticker-item">
+                📈 <span class="up">IHSG: 7.155</span> <span class="up">+0.52%</span> •••• <span class="down">NIKKEI 225: 38.500</span> <span class="down">-1.12%</span> •••• 💱 <span class="down">USD/IDR: 16.205</span> <span class="up">+0.05%</span> (Rupiah melemah tipis)
+            </span>
+            <span class="ticker-item">
+                💎 <span class="up">PERAK (SILVER) FUTURES: $28.50/OZ</span> <span class="up">+2.01%</span> (Sentimen *bullish* komoditas logam terus berlanjut) •••• 🏭 <span class="down">TIMAH (TIN) LME: $31.800/TON</span> <span class="down">-1.50%</span>
+            </span>
+            <span class="ticker-item">
+                ⚠️ <span class="down">KEKHAWATIRAN INFLASI:</span> Bank Sentral AS isyaratkan suku bunga tinggi bertahan lebih lama. •••• <span class="up">SAHAM TEKNOLOGI AS:</span> Melonjak 2% dipimpin oleh sektor *Artificial Intelligence*.
+            </span>
+            <span class="ticker-item">
+                ☕ <span class="up">KOPI ARABICA: $2.10/LBS</span> <span class="up">+0.95%</span> •••• 🌾 <span class="down">GANDUM (WHEAT) FUTURES: $6.05/BU</span> <span class="down">-0.40%</span> •••• 🔔 <span class="up">BURSA EROPA:</span> DAX Jerman dibuka menguat.
+            </span>
+            <span class="ticker-item">
+                ⭐ <span class="down">KUNJUNGI WEBSITE KAMI</span> untuk Analisis Pasar Harian yang lebih Mendalam! Link ada di BIO! •••• 🚀 <span class="up">PASAR BERGEJOLAK</span> - Jangan ambil keputusan tanpa Analisis Risiko! Konsultasi gratis malam ini!
+            </span>
+            <span class="ticker-item">
+                📊 <span class="up">PENAWARAN SPESIAL:</span> Dapatkan panduan investasi emas eksklusif GRATIS untuk 100 *follower* baru! <span class="up">FOLLOW SEKARANG!</span>
+            </span>
+            
+            <span class="ticker-item">
+                📊 <span class="up">EMAS SPOT: $2.350/OZ</span> <span class="up">+1.25%</span> •••• <span class="down">MINYAK MENTAH BRENT: $85.45/BBL</span> <span class="down">-0.88%</span> •••• 🪙 <span class="up">BITCOIN (BTC/USD): $68.700</span> <span class="up">+3.15%</span>
+            </span>
+            <span class="ticker-item">
+                📈 <span class="up">IHSG: 7.155</span> <span class="up">+0.52%</span> •••• <span class="down">NIKKEI 225: 38.500</span> <span class="down">-1.12%</span> •••• 💱 <span class="down">USD/IDR: 16.205</span> <span class="up">+0.05%</span> (Rupiah melemah tipis)
+            </span>
+            <span class="ticker-item">
+                💎 <span class="up">PERAK (SILVER) FUTURES: $28.50/OZ</span> <span class="up">+2.01%</span> (Sentimen *bullish* komoditas logam terus berlanjut) •••• 🏭 <span class="down">TIMAH (TIN) LME: $31.800/TON</span> <span class="down">-1.50%</span>
+            </span>
+            <span class="ticker-item">
+                ⚠️ <span class="down">KEKHAWATIRAN INFLASI:</span> Bank Sentral AS isyaratkan suku bunga tinggi bertahan lebih lama. •••• <span class="up">SAHAM TEKNOLOGI AS:</span> Melonjak 2% dipimpin oleh sektor *Artificial Intelligence*.
+            </span>
+            <span class="ticker-item">
+                ☕ <span class="up">KOPI ARABICA: $2.10/LBS</span> <span class="up">+0.95%</span> •••• 🌾 <span class="down">GANDUM (WHEAT) FUTURES: $6.05/BU</span> <span class="down">-0.40%</span> •••• 🔔 <span class="up">BURSA EROPA:</span> DAX Jerman dibuka menguat.
+            </span>
+            <span class="ticker-item">
+                ⭐ <span class="down">KUNJUNGI WEBSITE KAMI</span> untuk Analisis Pasar Harian yang lebih Mendalam! Link ada di BIO! •••• 🚀 <span class="up">PASAR BERGEJOLAK</span> - Jangan ambil keputusan tanpa Analisis Risiko! Konsultasi gratis malam ini!
+            </span>
+            <span class="ticker-item">
+                📊 <span class="up">PENAWARAN SPESIAL:</span> Dapatkan panduan investasi emas eksklusif GRATIS untuk 100 *follower* baru! <span class="up">FOLLOW SEKARANG!</span>
+            </span>
+            
+        </div>
+    </div>
+</body>
+</html>
