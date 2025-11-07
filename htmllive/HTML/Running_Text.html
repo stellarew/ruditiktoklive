@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Running Text Ticker Live Stream</title>
+    <title>Simple Running Text Ticker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
     
     <style>
         /* ============================== */
@@ -17,64 +17,76 @@
             width: 100%;
             margin: 0;
             padding: 0;
-            /* Latar belakang WAJIB transparan untuk OBS/TikTok */
             background-color: transparent; 
             font-family: 'Inter', sans-serif;
             overflow: hidden; 
         }
 
-        /* Kotak Memanjang (Container) */
+        /* Kotak Memanjang (Container Visual) */
         .ticker-wrap {
             position: fixed;
-            top: 50%; /* Posisikan vertikal di tengah */
-            transform: translateY(-50%); /* Geser ke atas 50% dari tingginya sendiri */
+            top: 50%; 
+            transform: translateY(-50%); 
+            
             left: 0;
             width: 100%;
-            height: 70px; /* <--- UKURAN KOTAK BARU */
+            height: 60px;
             
-            /* Visual */
-            background-color: rgba(0, 0, 0, 0.88); /* Hitam lebih pekat */
-            border-top: 3px solid #ffcc00; /* Garis atas Kuning Emas */
-            border-bottom: 3px solid #ffcc00; /* Garis bawah Kuning Emas */
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.3); /* Bayangan neon kuning */
+            background-color: #000000;
+            border-top: 5px solid #2ecc71; 
+            border-bottom: 5px solid #2ecc71; 
             
             overflow: hidden; 
             box-sizing: border-box;
-            display: flex; /* Untuk memastikan teks sejajar */
+            display: flex;
             align-items: center;
         }
 
-        /* Container Teks Bergerak */
+        /* Container Teks Bergerak (Ini Kunci Perbaikan Animasi) */
         .ticker-content {
-            /* Kecepatan Animasi: 50s -> 30s (LEBIH CEPAT) */
-            animation: marquee 30s linear infinite; 
+            /* Kita gunakan properti min-width untuk menjamin ruang yang cukup */
+            min-width: 200%; 
+            animation: marquee 35s linear infinite; 
             white-space: nowrap;
             animation-play-state: running;
+            display: flex; /* Tambahkan flex untuk memastikan item berjejer */
+        }
+
+        /* Jeda Animasi Saat Mouse Diarahkan */
+        .ticker-wrap:hover .ticker-content {
+            animation-play-state: paused;
         }
 
         /* Teks di dalamnya */
-        .ticker-content span {
-            display: inline-block;
-            color: #ffffff; 
-            font-size: 1.8rem; /* <--- UKURAN FONT LEBIH BESAR (1.1rem -> 1.8rem) */
-            font-weight: 800; /* Lebih tebal */
-            text-transform: uppercase; /* Semua huruf kapital */
-            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+        .ticker-item {
+            /* Perhatikan: margin-right untuk jarak antar item */
+            margin-right: 50px; 
             
-            line-height: 70px; /* <--- HARUS SAMA DENGAN HEIGHT KOTAK */
-            padding-left: 70px; /* Jarak antar kalimat */
+            color: #ecf0f1;
+            font-size: 1.6rem; 
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 50px; 
+            text-shadow: 0 0 5px rgba(46, 204, 113, 0.7); 
+            
+            /* PENTING: Gunakan flex-shrink: 0 untuk mencegah item menyusut */
+            flex-shrink: 0;
         }
-        
+
         /* ============================== */
-        /* 2. ANIMASI                   */
+        /* 2. ANIMASI                     */
         /* ============================== */
         
         @keyframes marquee {
+            /* Mulai dari KANAN LUAR layar (Posisi 0) */
             0% {
-                transform: translateX(100%);
+                transform: translateX(0);
             }
+            /* Bergerak ke KIRI. Nilai -100% akan menggeser container-nya sendiri */
             100% {
-                transform: translateX(-100%);
+                /* Karena kita menggunakan min-width: 200%, -50% akan menggeser 
+                   sepanjang lebar konten asli (yang kini menjadi 100% dari 200%) */
+                transform: translateX(-50%); 
             }
         }
     </style>
@@ -82,14 +94,44 @@
 <body>
     <div class="ticker-wrap">
         <div class="ticker-content">
-            <span>
-                ⚡ LIVE STREAMING BERSAMA RUDI D. JOMPANK! Sapa Host Anda di Kolom Komentar! •••••
-                💥 JANGAN LUPA FOLLOW AKUN INI dan TEKAN TOMBOL LOVE agar tidak ketinggalan notifikasi live berikutnya! •••••
-                🚀 Dukungan Anda Sangat Berarti! Jika Anda suka dengan konten ini, silakan share ke teman-teman Anda. •••••
-                🌐 INGIN AKSES FILE KHUSUS LIVE? Kunjungi link di Bio kami SEKARANG! •••••
-                ✨ Mari Berinteraksi dengan Positif, Jaga Etika, dan Hindari Komentar yang Menyinggung SARA. •••••
-                🔥 Terima kasih telah bergabung! Silakan nikmati siaran santai dan inspiratif malam ini. •••••
+            <span class="ticker-item">
+                ⚡ LIVE STREAMING BERSAMA RUDI D. JOMPANK! SAPA HOST ANDA! 🟢
             </span>
+            <span class="ticker-item">
+                💥 JANGAN LUPA FOLLOW AKUN INI DAN TEKAN TOMBOL LOVE! 💚
+            </span>
+            <span class="ticker-item">
+                🚀 DUKUNGAN ANDA SANGAT BERARTI! SILAKAN SHARE SIARAN INI! 🔗
+            </span>
+            <span class="ticker-item">
+                🌐 KUNJUNGI LINK DI BIO KAMI UNTUK AKSES FILE KHUSUS! 📁
+            </span>
+            <span class="ticker-item">
+                ✨ MARI BERINTERAKSI DENGAN POSITIF, JAGA ETIKA! 🙏
+            </span>
+            <span class="ticker-item">
+                🔥 TERIMA KASIH TELAH BERGABUNG! NIKMATI SIARAN INI. ☕
+            </span>
+            
+            <span class="ticker-item">
+                ⚡ LIVE STREAMING BERSAMA RUDI D. JOMPANK! SAPA HOST ANDA! 🟢
+            </span>
+            <span class="ticker-item">
+                💥 JANGAN LUPA FOLLOW AKUN INI DAN TEKAN TOMBOL LOVE! 💚
+            </span>
+            <span class="ticker-item">
+                🚀 DUKUNGAN ANDA SANGAT BERARTI! SILAKAN SHARE SIARAN INI! 🔗
+            </span>
+            <span class="ticker-item">
+                🌐 KUNJUNGI LINK DI BIO KAMI UNTUK AKSES FILE KHUSUS! 📁
+            </span>
+            <span class="ticker-item">
+                ✨ MARI BERINTERAKSI DENGAN POSITIF, JAGA ETIKA! 🙏
+            </span>
+            <span class="ticker-item">
+                🔥 TERIMA KASIH TELAH BERGABUNG! NIKMATI SIARAN INI. ☕
+            </span>
+            
         </div>
     </div>
 </body>

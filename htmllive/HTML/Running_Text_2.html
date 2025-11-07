@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Running Text</title>
+    
+    <style>
+        /* ============================== */
+        /* 1. STYLING DASAR & PROPORSI    */
+        /* ============================== */
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            /* WAJIB Transparan */
+            background-color: transparent; 
+            overflow: hidden; 
+        }
+
+        /* Container Visual (Kotak) */
+        .ticker-wrap {
+            position: fixed;
+            top: 50%; 
+            transform: translateY(-50%); 
+            left: 0;
+            width: 100%;
+            height: 50px; /* Tinggi Sederhana */
+            
+            /* HILANGKAN SEMUA BACKGROUND/BORDER */
+            background-color: transparent; 
+            
+            overflow: hidden; 
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Container Teks Bergerak (Kunci Animasi) */
+        .ticker-content {
+            /* Pastikan ada ruang untuk duplikasi */
+            min-width: 200%; 
+            animation: marquee 25s linear infinite; /* Kecepatan lebih cepat */
+            white-space: nowrap;
+            animation-play-state: running;
+            display: flex; 
+        }
+
+        /* Teks di dalamnya */
+        .ticker-item {
+            /* Teks standar: Putih, besar, tebal */
+            color: white; 
+            font-size: 1.5rem; 
+            font-weight: bold;
+            text-transform: uppercase;
+            
+            line-height: 50px; 
+            margin-right: 50px; /* Jarak antar item */
+            flex-shrink: 0; /* Penting agar tidak menyusut */
+        }
+
+        /* ============================== */
+        /* 2. ANIMASI                     */
+        /* ============================== */
+        
+        @keyframes marquee {
+            /* Mulai dari KANAN LUAR */
+            0% {
+                transform: translateX(0);
+            }
+            /* Geser KIRI sepanjang lebar satu set teks */
+            100% {
+                transform: translateX(-50%); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticker-wrap">
+        <div class="ticker-content">
+            <span class="ticker-item">👋 SELAMAT DATANG DI LIVE STREAM RUDI D. JOMPANK! SILAKAN BERINTERAKSI!</span>
+            <span class="ticker-item">✅ JANGAN LUPA FOLLOW & LIKE UNTUK MENDAPATKAN NOTIFIKASI LIVE BERIKUTNYA.</span>
+            <span class="ticker-item">⭐ TERIMA KASIH ATAS DUKUNGAN DAN SHARING ANDA SEMUA!</span>
+
+            <span class="ticker-item">👋 SELAMAT DATANG DI LIVE STREAM RUDI D. JOMPANK! SILAKAN BERINTERAKSI!</span>
+            <span class="ticker-item">✅ JANGAN LUPA FOLLOW & LIKE UNTUK MENDAPATKAN NOTIFIKASI LIVE BERIKUTNYA.</span>
+            <span class="ticker-item">⭐ TERIMA KASIH ATAS DUKUNGAN DAN SHARING ANDA SEMUA!</span>
+        </div>
+    </div>
+</body>
+</html>
