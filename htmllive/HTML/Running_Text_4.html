@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Running Text Ticker - Rudi TikTok Live</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================== */
+        /* 1. STYLING DASAR & PROPORSI    */
+        /* ============================== */
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: transparent; 
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; 
+        }
+
+        .ticker-wrap {
+            position: fixed;
+            top: 50%; 
+            transform: translateY(-50%); 
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #000000;
+            border-top: 5px solid #2ecc71; 
+            border-bottom: 5px solid #2ecc71; 
+            overflow: hidden; 
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-content {
+            min-width: 400%; 
+            /* DURASI ANIMASI DIPERPANJANG DR 35s KE 150s */
+            animation: marquee 150s linear infinite; 
+            white-space: nowrap;
+            animation-play-state: running;
+            display: flex;
+        }
+
+        /* ❌ FITUR JEDA KURSOR DIHILANGKAN */
+        /*
+        .ticker-wrap:hover .ticker-content {
+            animation-play-state: paused;
+        }
+        */
+
+        .ticker-item {
+            padding: 0 40px; 
+            color: #ecf0f1;
+            font-size: 1.6rem; 
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 50px; 
+            text-shadow: 0 0 5px rgba(46, 204, 113, 0.7); 
+            flex-shrink: 0;
+        }
+
+        /* ============================== */
+        /* 2. ANIMASI                     */
+        /* ============================== */
+        
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticker-wrap">
+        <div class="ticker-content">
+            
+            <span class="ticker-item">
+                🔴 LIVE BERSAMA RUDI D. JOMPANK! SAPA HOST ANDA DI KOLOM KOMENTAR! •••• JADWAL LIVE TERBARU SELALU ADA DI PROFILE KAMI, JANGAN LUPA NYALAKAN NOTIFIKASI! •••• HARI INI KITA AKAN BAHAS TENTANG STRATEGI BARU DI TIKTOK UNTUK MENDAPATKAN VIEW LEBIH BANYAK DAN CARA OPTIMALISASI AKUN AGAR CEPAT FYP. •••• BAGI YANG BARU GABUNG, SILAKAN FOLLOW AKUN INI! •••• TERIMA KASIH UNTUK GIFT DAN DUKUNGAN YANG ANDA BERIKAN! DUKUNGAN ANDA SANGAT BERHARGA UNTUK KEMAJUAN KONTEN KAMI! •••• JIKA ADA PERTANYAAN SEPUTAR TIKTOK ATAU LIVE STREAMING, TULIS DI KOLOM KOMENTAR! KAMI AKAN JAWAB SATU PER SATU. •••• JANGAN RAGU UNTUK BERINTERAKSI, KARENA INTERAKSI ADALAH KUNCI KESUKSESAN DI LIVE! •••• HINDARI KOMENTAR NEGATIF, SARA, ATAU BERSIFAT PROMOSI AKUN LAIN TANPA IZIN HOST. MARI KITA JAGA KOMUNITAS INI TETAP POSITIF DAN MENDUKUNG! •••• LINK AKSES MATERI DAN FILE KHUSUS DAPAT DITEMUKAN DI BIO AKUN KAMI. SILAKAN CEK SEKARANG! •••• INGAT! KONSISTENSI ADALAH RAJA! TERUSLAH BERKARYA DAN JANGAN MUDAH MENYERAH! •••• TIPS HARI INI: COBA LAKUKAN LIVE DI JAM PRIMA WAKTU INDONESIA BAGIAN BARAT, SEKITAR PUKUL 19.00 HINGGA 21.00 WIB, UNTUK JANGKAUAN AUDIENS MAKSIMAL. •••• JANGAN LUPA SHARE LIVE INI KE TEMAN-TEMAN ANDA YANG MEMBUTUHKAN INFO STRATEGI TIKTOK! •••• SEMOGA MALAM INI PENUH INSPIRASI DAN HASIL! TERIMA KASIH SUDAH MENJADI BAGIAN DARI KOMUNITAS RUDI D. JOMPANK! •••• SELAMAT MENIKMATI SIARAN! 🚀
+            </span>
+            
+            <span class="ticker-item">
+                🔴 LIVE BERSAMA RUDI D. JOMPANK! SAPA HOST ANDA DI KOLOM KOMENTAR! •••• JADWAL LIVE TERBARU SELALU ADA DI PROFILE KAMI, JANGAN LUPA NYALAKAN NOTIFIKASI! •••• HARI INI KITA AKAN BAHAS TENTANG STRATEGI BARU DI TIKTOK UNTUK MENDAPATKAN VIEW LEBIH BANYAK DAN CARA OPTIMALISASI AKUN AGAR CEPAT FYP. •••• BAGI YANG BARU GABUNG, SILAKAN FOLLOW AKUN INI! •••• TERIMA KASIH UNTUK GIFT DAN DUKUNGAN YANG ANDA BERIKAN! DUKUNGAN ANDA SANGAT BERHARGA UNTUK KEMAJUAN KONTEN KAMI! •••• JIKA ADA PERTANYAAN SEPUTAR TIKTOK ATAU LIVE STREAMING, TULIS DI KOLOM KOMENTAR! KAMI AKAN JAWAB SATU PER SATU. •••• JANGAN RAGU UNTUK BERINTERAKSI, KARENA INTERAKSI ADALAH KUNCI KESUKSESAN DI LIVE! •••• HINDARI KOMENTAR NEGATIF, SARA, ATAU BERSIFAT PROMOSI AKUN LAIN TANPA IZIN HOST. MARI KITA JAGA KOMUNITAS INI TETAP POSITIF DAN MENDUKUNG! •••• LINK AKSES MATERI DAN FILE KHUSUS DAPAT DITEMUKAN DI BIO AKUN KAMI. SILAKAN CEK SEKARANG! •••• INGAT! KONSISTENSI ADALAH RAJA! TERUSLAH BERKARYA DAN JANGAN MUDAH MENYERAH! •••• TIPS HARI INI: COBA LAKUKAN LIVE DI JAM PRIMA WAKTU INDONESIA BAGIAN BARAT, SEKITAR PUKUL 19.00 HINGGA 21.00 WIB, UNTUK JANGKAUAN AUDIENS MAKSIMAL. •••• JANGAN LUPA SHARE LIVE INI KE TEMAN-TEMAN ANDA YANG MEMBUTUHKAN INFO STRATEGI TIKTOK! •••• SEMOGA MALAM INI PENUH INSPIRASI DAN HASIL! TERIMA KASIH SUDAH MENJADI BAGIAN DARI KOMUNITAS RUDI D. JOMPANK! •••• SELAMAT MENIKMATI SIARAN! 🚀
+            </span>
+            
+        </div>
+    </div>
+</body>
+</html>
