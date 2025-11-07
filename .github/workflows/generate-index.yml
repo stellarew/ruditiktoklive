@@ -27,7 +27,7 @@ jobs:
       - name: Commit and Push Main Index Change
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-	# Tambahkan baris ini di sini
+# Tambahkan baris ini di sini
           force: true
           # Pastikan input yang kita hapus sudah benar-benar hilang
           # token: ${{ secrets.GITHUB_TOKEN }} # Ini yang menyebabkan warning!
