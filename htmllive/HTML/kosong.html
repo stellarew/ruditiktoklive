@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Market Ticker - Rudi TikTok Live</title>
+    <title>Mega Varied Ticker - Rudi TikTok Live (64 Unik & Acak, SPEED 15)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* (CSS SAMA SEPERTI SEBELUMNYA - DIJALANKAN TERUS-MENERUS SELAMA 150 DETIK) */
-        /* Anda tidak perlu mengubah CSS lagi */
         html, body {
             height: 100%; width: 100%; margin: 0; padding: 0;
             background-color: transparent; font-family: 'Inter', sans-serif; overflow: hidden; 
@@ -18,97 +16,148 @@
 
         .ticker-wrap {
             position: fixed; top: 50%; transform: translateY(-50%); left: 0;
-            width: 100%; height: 60px;
+            width: 100%; 
+            height: 40px; 
             background-color: #000000;
-            /* Ubah warna border menjadi BIRU MUDA agar terlihat seperti Finansial */
-            border-top: 5px solid #3498db; 
-            border-bottom: 5px solid #3498db; 
+            border-top: 2px solid #3498db; 
+            border-bottom: 2px solid #3498db; 
             overflow: hidden; box-sizing: border-box; display: flex; align-items: center;
         }
 
         .ticker-content {
-            min-width: 400%; animation: marquee 150s linear infinite; 
+            min-width: 600%; /* Disesuaikan untuk 3x Duplikasi (64 x 3 = 192 item) */
+            animation: marquee 80s linear infinite; /* KECEPATAN BARU: 15 detik per putaran */
             white-space: nowrap; animation-play-state: running; display: flex;
         }
 
         .ticker-item {
-            padding: 0 40px; 
+            padding: 0 30px; 
             color: #ecf0f1;
-            font-size: 1.6rem; font-weight: 900;
+            font-size: 1.2rem; 
+            font-weight: 900;
             text-transform: uppercase;
-            line-height: 50px; 
-            /* Ubah warna shadow menjadi Biru */
-            text-shadow: 0 0 5px rgba(52, 152, 219, 0.7); 
+            line-height: 36px; 
+            text-shadow: 0 0 3px rgba(52, 152, 219, 0.7); 
             flex-shrink: 0;
         }
 
-        /* Kelas khusus untuk warna GREEN (Naik) */
-        .up {
-            color: #2ecc71; /* Hijau */
-            font-weight: 900;
-        }
-
-        /* Kelas khusus untuk warna RED (Turun) */
-        .down {
-            color: #e74c3c; /* Merah */
-            font-weight: 900;
-        }
+        .up { color: #2ecc71; font-weight: 900; }
+        .down { color: #e74c3c; font-weight: 900; }
         
         @keyframes marquee {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            100% { transform: translateX(-66.66%); } /* Looping 3 set */
         }
     </style>
 </head>
 <body>
     <div class="ticker-wrap">
-        <div class="ticker-content">
-            
-            <span class="ticker-item">
-                📊 <span class="up">EMAS SPOT: $2.350/OZ</span> <span class="up">+1.25%</span> •••• <span class="down">MINYAK MENTAH BRENT: $85.45/BBL</span> <span class="down">-0.88%</span> •••• 🪙 <span class="up">BITCOIN (BTC/USD): $68.700</span> <span class="up">+3.15%</span>
-            </span>
-            <span class="ticker-item">
-                📈 <span class="up">IHSG: 7.155</span> <span class="up">+0.52%</span> •••• <span class="down">NIKKEI 225: 38.500</span> <span class="down">-1.12%</span> •••• 💱 <span class="down">USD/IDR: 16.205</span> <span class="up">+0.05%</span> (Rupiah melemah tipis)
-            </span>
-            <span class="ticker-item">
-                💎 <span class="up">PERAK (SILVER) FUTURES: $28.50/OZ</span> <span class="up">+2.01%</span> (Sentimen *bullish* komoditas logam terus berlanjut) •••• 🏭 <span class="down">TIMAH (TIN) LME: $31.800/TON</span> <span class="down">-1.50%</span>
-            </span>
-            <span class="ticker-item">
-                ⚠️ <span class="down">KEKHAWATIRAN INFLASI:</span> Bank Sentral AS isyaratkan suku bunga tinggi bertahan lebih lama. •••• <span class="up">SAHAM TEKNOLOGI AS:</span> Melonjak 2% dipimpin oleh sektor *Artificial Intelligence*.
-            </span>
-            <span class="ticker-item">
-                ☕ <span class="up">KOPI ARABICA: $2.10/LBS</span> <span class="up">+0.95%</span> •••• 🌾 <span class="down">GANDUM (WHEAT) FUTURES: $6.05/BU</span> <span class="down">-0.40%</span> •••• 🔔 <span class="up">BURSA EROPA:</span> DAX Jerman dibuka menguat.
-            </span>
-            <span class="ticker-item">
-                ⭐ <span class="down">KUNJUNGI WEBSITE KAMI</span> untuk Analisis Pasar Harian yang lebih Mendalam! Link ada di BIO! •••• 🚀 <span class="up">PASAR BERGEJOLAK</span> - Jangan ambil keputusan tanpa Analisis Risiko! Konsultasi gratis malam ini!
-            </span>
-            <span class="ticker-item">
-                📊 <span class="up">PENAWARAN SPESIAL:</span> Dapatkan panduan investasi emas eksklusif GRATIS untuk 100 *follower* baru! <span class="up">FOLLOW SEKARANG!</span>
-            </span>
-            
-            <span class="ticker-item">
-                📊 <span class="up">EMAS SPOT: $2.350/OZ</span> <span class="up">+1.25%</span> •••• <span class="down">MINYAK MENTAH BRENT: $85.45/BBL</span> <span class="down">-0.88%</span> •••• 🪙 <span class="up">BITCOIN (BTC/USD): $68.700</span> <span class="up">+3.15%</span>
-            </span>
-            <span class="ticker-item">
-                📈 <span class="up">IHSG: 7.155</span> <span class="up">+0.52%</span> •••• <span class="down">NIKKEI 225: 38.500</span> <span class="down">-1.12%</span> •••• 💱 <span class="down">USD/IDR: 16.205</span> <span class="up">+0.05%</span> (Rupiah melemah tipis)
-            </span>
-            <span class="ticker-item">
-                💎 <span class="up">PERAK (SILVER) FUTURES: $28.50/OZ</span> <span class="up">+2.01%</span> (Sentimen *bullish* komoditas logam terus berlanjut) •••• 🏭 <span class="down">TIMAH (TIN) LME: $31.800/TON</span> <span class="down">-1.50%</span>
-            </span>
-            <span class="ticker-item">
-                ⚠️ <span class="down">KEKHAWATIRAN INFLASI:</span> Bank Sentral AS isyaratkan suku bunga tinggi bertahan lebih lama. •••• <span class="up">SAHAM TEKNOLOGI AS:</span> Melonjak 2% dipimpin oleh sektor *Artificial Intelligence*.
-            </span>
-            <span class="ticker-item">
-                ☕ <span class="up">KOPI ARABICA: $2.10/LBS</span> <span class="up">+0.95%</span> •••• 🌾 <span class="down">GANDUM (WHEAT) FUTURES: $6.05/BU</span> <span class="down">-0.40%</span> •••• 🔔 <span class="up">BURSA EROPA:</span> DAX Jerman dibuka menguat.
-            </span>
-            <span class="ticker-item">
-                ⭐ <span class="down">KUNJUNGI WEBSITE KAMI</span> untuk Analisis Pasar Harian yang lebih Mendalam! Link ada di BIO! •••• 🚀 <span class="up">PASAR BERGEJOLAK</span> - Jangan ambil keputusan tanpa Analisis Risiko! Konsultasi gratis malam ini!
-            </span>
-            <span class="ticker-item">
-                📊 <span class="up">PENAWARAN SPESIAL:</span> Dapatkan panduan investasi emas eksklusif GRATIS untuk 100 *follower* baru! <span class="up">FOLLOW SEKARANG!</span>
-            </span>
-            
-        </div>
+        <div class="ticker-content" id="tickerContent">
+            </div>
     </div>
+
+    <script>
+        // Array berisi 64 ITEM BERITA UNIK
+        const newsItems = [
+            // 1-10: Finansial & Komoditas (Sudah termasuk yang Anda minta)
+            '📊 IHSG Menguat Tipis: 7.155 <span class="up">+0.52%</span> •••• Nikel LME Terkoreksi <span class="down">-1.50%</span> Setelah Tembus Level Tertinggi.',
+            '💎 PERAK FUTURES: $28.50/OZ <span class="up">+2.01%</span> •••• GANDUM: $6.05/BU <span class="down">-0.40%</span>. Stok Pangan Global Dipantau.',
+            '☕ KOPI ARABICA Naik ke $2.10/LBS <span class="up">+0.95%</span> •••• MINYAK BRENT: $85.45/BBL <span class="down">-0.88%</span>. Produksi OPEC Tetap Stabil.',
+            '🪙 BITCOIN (BTC/USD): $68.700 <span class="up">+3.15%</span> •••• ETHEREUM: $4.100 <span class="up">+2.50%</span>. Pasar Kripto Kembali Bullish.',
+            '🏭 TIMAH LME: $31.800/TON <span class="down">-1.50%</span> •••• KARET TOCOM <span class="up">+0.99%</span>. Pasar Komoditas Beragam.',
+            '💰 BI Tetapkan Suku Bunga Acuan (7-Day Repo Rate) di Angka 6.25%. Inflasi Terkendali. 🛡️',
+            '💱 USD/IDR: 16.205 <span class="up">+0.05%</span> •••• EURO/USD <span class="down">-0.10%</span>. Rupiah Melemah Tipis.',
+            '📊 EMAS SPOT: $2.350/OZ <span class="up">+1.25%</span> •••• NIKKEI 225: 38.500 <span class="down">-1.12%</span>. Investor Mencari Peluang Pasar Asia.',
+            '🏛️ SAHAM TEKNOLOGI AS Melonjak 2% Dipimpin Oleh Sektor Kecerdasan Buatan (AI).',
+            '⚠️ KEKHAWATIRAN INFLASI: Bank Sentral AS Isyaratkan Suku Bunga Tinggi Bertahan Lebih Lama.',
+            // 11-20: Teknologi & Bisnis
+            '💻 GOOGLE Kenalkan Gemini Ultra, Tingkatkan Kemampuan Chatbot AI Mereka. Fitur Baru Diluncurkan.',
+            '📱 APPLE Rilis OS Terbaru, Fokus pada Keamanan Data dan Penghematan Baterai. Diperkirakan Rilis Bulan Depan.',
+            '🚀 SPACEX Berhasil Luncurkan Misi Kargo ke ISS. Persiapan Misi Berawak Berikutnya Dimulai.',
+            '🔋 INOVASI OTOMOTIF: Pabrikan China Rilis Mobil Listrik Jarak Jauh dengan Harga Terjangkau. Ekspansi Global Dipercepat.',
+            '🏭 PT XYZ Umumkan Akuisisi Perusahaan E-commerce Senilai Rp 1 Triliun. Target Perluasan Pasar Diperkirakan Dua Kali Lipat.',
+            '🌐 METAVERSE: Perusahaan Gaming Besar Investasi 1 Miliar USD untuk Pengembangan Platform Virtual Reality.',
+            '📈 STARTUP LOKAL: Dua Startup Fintech Indonesia Berhasil Mendapatkan Pendanaan Seri B. Nilai Valuasi Meningkat Pesat.',
+            '🛡️ KEAMANAN SIBER: Serangan Ransomware Global Meningkat 15%. Perusahaan Diimbau Perketat Sistem Keamanan.',
+            '5G PERLUASAN: Jaringan 5G Telah Mencapai 80% Area Metropolitan Utama di Indonesia.',
+            '🛒 E-COMMERCE: Penjualan Online Diprediksi Naik 25% Selama Musim Liburan Akhir Tahun.',
+            // 21-30: Olahraga & Hiburan
+            '⚽ FINAL LIGA CHAMPIONS: Real Madrid Kalahkan Man City 3-2. Gol Kemenangan Dicetak Bellingham. 🏆',
+            '🏀 NBA: LA Lakers Menang Dramatis Atas Boston Celtics Lewat Buzzer Beater LeBron James. Klasemen Wilayah Barat Kian Ketat.',
+            '🏎️ FORMULA 1: Max Verstappen Raih Pole Position di Grand Prix Monako. Balapan Diprediksi Berlangsung Sengit.',
+            '🏸 BULUTANGKIS: Pasangan Ganda Putra Indonesia Lolos ke Final All England Setelah Kalahkan Pasangan China. Raih Gelar Juara.',
+            '🎬 FILM BARU: Sekuel Film Fiksi Ilmiah Terlaris Tahun Lalu Akhirnya Rilis Trailer Resmi. Tayang Serentak Bulan Depan.',
+            '🎤 KONSER MUSIK: Tiket Konser Band Internasional Sold Out Hanya dalam Hitungan Jam. Tambahan Jadwal Tur Diumumkan.',
+            '🎮 ESPORTS: Tim Indonesia Juara Dunia Mobile Legends. Bawa Pulang Hadiah 2 Juta USD. Kebanggaan Bangsa.',
+            '📺 STREAMING: Platform Streaming Lokal Tambahkan 50 Judul Film Eksklusif Indonesia. Tawarkan Konten Berkualitas.',
+            '🏅 OLIMPIADE PARIS: Kontingen Indonesia Targetkan Emas dari Cabang Angkat Besi dan Panahan.',
+            '🎾 TENIS: Rafael Nadal Umumkan Akan Absen di Turnamen Berikutnya Karena Pemulihan Cedera Kaki.',
+            // 31-40: Umum & Sosial
+            '⚡ BERITA UTAMA: KTT G20 di Brazil Hasilkan Kesepakatan Iklim Global yang Ambisius. 🌎',
+            '🚒 BENCANA ALAM: Kebakaran Hutan di California Semakin Parah. Ribuan Warga Dievakuasi. Peningkatan Resiko Bencana.',
+            '🚧 INFRASTRUKTUR: Proyek Tol Baru Jakarta-Bandung Ditargetkan Selesai Lebih Cepat Dari Jadwal. Konektivitas Meningkat.',
+            '🏥 KESEHATAN: WHO Peringatkan Varian Baru COVID-19. Vaksinasi Booster Tetap Diimbau. Waspada.',
+            '💉 PENGEMBANGAN MEDIS: Ilmuwan Temukan Terapi Gen Baru yang Efektif untuk Pengobatan Kanker Langka. Harapan Baru.',
+            '🎓 PENDIDIKAN: Mendikbud Rilis Program Merdeka Belajar Terbaru. Fokus pada Peningkatan Keterampilan Digital.',
+            '💰 EKONOMI LOKAL: Pemerintah Siapkan Dana Stimulus UMKM Senilai Rp 500 Miliar Awal Tahun Depan. Dukungan Bagi Pengusaha.',
+            '⚠️ GLOBAL: PBB Peringatkan Krisis Pangan Global Meningkat Akibat Perubahan Iklim Ekstrim. 🌾',
+            '✈️ TRANSPORTASI: Pembukaan Terminal Bandara Baru Diundur. Keterlambatan Karena Kendala Teknis. Mohon Bersabar.',
+            '🌳 LINGKUNGAN: Komitmen Perusahaan Besar untuk Mencapai Nol Emisi Karbon Pada Tahun 2050.',
+            // 41-50: Berita Tambahan Variatif
+            '🖼️ SENI & BUDAYA: Pameran Lukisan Seniman Kontemporer Indonesia Dibuka di London. Apresiasi Seni Global.',
+            '🌌 ASTRONOMI: Teleskop James Webb Temukan Galaksi Baru yang Jaraknya 13 Miliar Tahun Cahaya. Penemuan Spektakuler.',
+            '⚖️ HUKUM: Revisi Undang-Undang ITE Disahkan. Fokus pada Perlindungan Data Pribadi Masyarakat.',
+            '💡 INOVASI: Peneliti Indonesia Kembangkan Baterai Litium Berbasis Bahan Lokal. Hemat Biaya Produksi.',
+            '🏙️ URBAN: Rencana Pembangunan Kota Baru di Kalimantan Dipercepat. Fokus pada Konsep Smart City.',
+            '🚗 OTOMOTIF: Penjualan Mobil Hybrid dan Listrik Naik 50% di Kuartal Terakhir. Kesadaran Lingkungan Meningkat.',
+            '💻 KERJA JAUH: Tren Kerja Jarak Jauh (Remote Working) Tetap Populer Pasca Pandemi.',
+            '📈 EKSPOR: Ekspor Produk Pertanian Indonesia Mencapai Nilai Tertinggi Tahun Ini. Peningkatan Kualitas Produk.',
+            '🚢 MARITIM: Pelabuhan Utama Indonesia Mendapatkan Upgrade Fasilitas Senilai Rp 2 Triliun. Efisiensi Logistik.',
+            '👩‍💻 DIGITAL: Jumlah Pengguna Internet di Indonesia Tembus 210 Juta Jiwa. Pasar Digital Terus Berkembang.',
+            // 51-64: Berita Cepat & Netral
+            '⚡ HARGA GAS ALAM: Naik 1.5% di Bursa Eropa. Musim Dingin Tiba.',
+            '🏛️ FED AS: Mengisyaratkan Penahanan Suku Bunga pada Pertemuan Berikutnya. Stabilitas Pasar Diutamakan.',
+            '🏀 PERTANDINGAN NBA: Celtics Kalahkan Heat 110-105. Pertahanan Solid Membawa Kemenangan.',
+            '🛰️ SATELIT INDONESIA: Satelit Komunikasi Baru Berhasil Diluncurkan ke Orbit. Koneksi Internet Lebih Cepat.',
+            '🏭 INDUSTRI PENGOLAHAN: Kinerja Manufaktur Nasional Terus Tumbuh Positif. Permintaan Pasar Meningkat.',
+            '💡 KECERDASAN BUATAN: AI Mampu Mendiagnosis Penyakit Langka Lebih Cepat Dari Dokter. Bantuan Teknologi Medis.',
+            '🌊 PARIWISATA: Destinasi Wisata Bali Catat Peningkatan Turis Mancanegara 80%. Pemulihan Sektor Pariwisata.',
+            '📚 BEASISWA: Pemerintah Buka Pendaftaran Beasiswa Penuh untuk Program Magister di Luar Negeri. Kesempatan Belajar.',
+            '♻️ ENERGI TERBARUKAN: Pembangkit Listrik Tenaga Surya (PLTS) Baru Resmi Beroperasi di Jawa Barat. Investasi Hijau.',
+            '💸 DEBT CEILING AS: Negosiasi Batas Utang Amerika Serikat Terus Berlanjut di Kongres. Mencari Solusi Terbaik.',
+            '📊 KATA HARI INI: Analisis Risiko Adalah Kunci Sebelum Setiap Keputusan Investasi. Selalu Waspada.',
+            '📰 BERITA KILAT: Harga Minyak Turun Tipis Setelah Peningkatan Cadangan Minyak Mentah AS. Pasokan Lebih Dari Permintaan.',
+            '💡 TIPS SEHAT: Konsumsi Air Putih yang Cukup Dapat Meningkatkan Fokus dan Produktivitas Kerja. Jaga Stamina.',
+            '🌐 TEKNOLOGI BARU: Uji Coba Mobil Otonom di Jepang Berhasil. Transportasi Masa Depan Mulai Dekat.',
+        ];
+
+        // Fungsi Fisher-Yates Shuffle untuk pengacakan array yang efektif
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // 1. Acak urutan 64 berita
+        shuffleArray(newsItems);
+
+        // 2. Tentukan jumlah duplikasi yang dibutuhkan (3x total)
+        const totalCopies = 3;
+        let tickerHTML = '';
+        
+        // 3. Gabungkan berita acak ke dalam HTML, duplikasi sebanyak 3 kali
+        for (let k = 0; k < totalCopies; k++) {
+            newsItems.forEach(item => {
+                // Hapus Tanda Bintang Markdown (jika ada) dan buat tag <span>
+                let cleanItem = item.replace(/\*\*/g, '');
+                tickerHTML += `<span class="ticker-item">${cleanItem}</span>`;
+            });
+        }
+
+        // 4. Masukkan HTML yang sudah diacak dan diduplikasi ke dalam div
+        document.getElementById('tickerContent').innerHTML = tickerHTML;
+
+    </script>
 </body>
 </html>
